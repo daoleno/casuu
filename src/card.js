@@ -22,7 +22,7 @@ function Card(props) {
         className="absolute inset-0  bg-gray-900 rounded-md"
         style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}
       >
-        <h1 className="text-cool-gray-50 text-center mt-10">title</h1>
+        {/* <h1 className="text-cool-gray-50 text-center text-xl mt-10">title</h1> */}
       </animated.div>
       <animated.div
         className="absolute inset-0  bg-red-900 rounded-md"
@@ -31,7 +31,7 @@ function Card(props) {
           transform: transform.interpolate((t) => `${t} rotateY(180deg)`),
         }}
       >
-        <h1 className="text-cool-gray-50 text-center mt-10">content</h1>
+        {/* <h1 className="text-cool-gray-50 text-center  mt-10">content</h1> */}
       </animated.div>
     </animated.div>
   );

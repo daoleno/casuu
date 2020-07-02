@@ -11,7 +11,6 @@ export default [
         description: "#f5f7fa → #c3cfe2",
         css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
         height: 400,
-        parent: true,
       },
       {
         name: "Deep Blue",
@@ -26,7 +25,6 @@ export default [
     description: "#f5f7fa → #c3cfe2",
     css: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
     height: 400,
-    parent: true,
   },
   {
     name: "Deep Blue",

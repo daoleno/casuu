@@ -6,9 +6,10 @@ import data from "./data";
 
 function App() {
   return (
-    // <div className="flex items-center justify-center gap-10">
-
-    <DraggableList items={"Lorem ipsum dolor sit".split(" ")} />
+    <div className="flex flex-row">
+      <CardBox data={data} />
+      {/* <DraggableList items={"Lorem ipsum dolor sit".split(" ")} /> */}
+    </div>
   );
 }
 
