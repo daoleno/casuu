@@ -2,7 +2,7 @@ import React, { useState, Fragment } from "react";
 import { animated, useSpring } from "react-spring";
 import "./styles.css";
 
-function Card(props) {
+function FlipCard(props) {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
@@ -11,12 +11,12 @@ function Card(props) {
   });
   return (
     <animated.div
-      className="relative cursor-pointer max-w-full max-h-full"
+      className="relative cursor-pointer max-w-full max-h-full h-32"
       onClick={(event) => {
         event.stopPropagation();
         set((state) => !state);
       }}
-      {...props}
+      // {...props}
     >
       <animated.div
         className="absolute inset-0  bg-gray-900 rounded-md"
@@ -37,23 +37,46 @@ function Card(props) {
   );
 }
 
-function RawCard({ content }) {
+function RawCard(props) {
+  // const [open, setOpen] = useState(false);
+
   return (
     // <div className="cursor-pointer max-w-full max-h-full w-32 h-32  p-5 bg-white rounded-md shadow-solid">
-    <div className="grid content-center cursor-pointer h-32 bg-white rounded-md shadow-solid">
-      <span className="font-bold text-center">{content}</span>
+    <div
+      className="grid content-center cursor-pointer h-32 bg-white rounded-md shadow-solid"
+      onClick={() => {
+        // setOpen(!open);
+        if (props.content.children !== undefined) {
+          props.callback(props.content.children);
+        }
+      }}
+    >
+      {/* {open ? (
+        <div className="grid grid-cols-4 gap-7 p-5 mt-20 rounded-md cursor-pointer shadow-outline-red">
+          {data.map((item) => (
+            <RawCard content={item.name} />
+          ))}
+        </div>
+      ) : ( */}
+      <span className="font-bold text-center">{props.content.name}</span>
+      {/* )} */}
     </div>
   );
 }
 
 function RawCardList({ cards }) {
+  const [data, setData] = useState(cards);
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 grid grid-cols-4 gap-7 p-5 mt-20 rounded-md cursor-pointer shadow-outline-gray">
-      {cards.map((item) => (
-        <RawCard content={item.name} />
-      ))}
+      {data.map((item) =>
+        item.type === "child" ? (
+          <FlipCard />
+        ) : (
+          <RawCard content={item} callback={setData} />
+        )
+      )}
     </div>
   );
 }
 
-export { Card, RawCard, RawCardList };
+export { FlipCard, RawCard, RawCardList };

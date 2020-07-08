@@ -18,7 +18,9 @@ function Nav() {
                 src="/img/logos/workflow-logo-on-white.svg"
                 alt="Workflow logo"
               /> */}
-              <h1 className="block w-auto">Memory Card</h1>
+              <a href="/">
+                <h1 className="block w-auto">Memory Card</h1>
+              </a>
             </div>
           </div>
           <div className="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
