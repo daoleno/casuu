@@ -6,7 +6,7 @@ import {
   config,
   animated,
 } from "react-spring";
-import Card from "./card";
+import Card, { RawCard } from "./card";
 import data from "./data";
 
 function CardBox() {
@@ -16,8 +16,11 @@ function CardBox() {
   const { size, opacity, ...rest } = useSpring({
     ref: springRef,
     config: config.stiff,
-    from: { size: "20%", background: "hotpink" },
-    to: { size: open ? "100%" : "20%", background: open ? "white" : "hotpink" },
+    from: { size: "100%", background: "white" },
+    to: {
+      size: open ? "100%" : "100%",
+      background: open ? "white" : "white",
+    },
   });
 
   const transRef = useRef();
@@ -37,9 +40,9 @@ function CardBox() {
   ]);
 
   return (
-    <div className="w-screen h-screen overflow-hidden select-none flex items-center justify-center">
-      <animated.div
-        className="relative grid grid-cols-4 gap-7 p-5 bg-white rounded-md cursor-pointer shadow-outline-pink"
+    <div className="">
+      {/* <animated.div
+        className="relative grid grid-cols-4 gap-7 p-5 bg-white rounded-md cursor-pointer shadow-solid"
         style={{ ...rest, width: size, height: size }}
         onClick={() => {
           set((open) => !open);
@@ -55,7 +58,7 @@ function CardBox() {
             }}
           />
         ))}
-      </animated.div>
+      </animated.div> */}
     </div>
   );
 }

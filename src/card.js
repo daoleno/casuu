@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { animated, useSpring } from "react-spring";
 import "./styles.css";
 
@@ -11,7 +11,7 @@ function Card(props) {
   });
   return (
     <animated.div
-      className="relative w-32 h-32 cursor-pointer"
+      className="relative cursor-pointer max-w-full max-h-full"
       onClick={(event) => {
         event.stopPropagation();
         set((state) => !state);
@@ -37,4 +37,23 @@ function Card(props) {
   );
 }
 
-export default Card;
+function RawCard({ content }) {
+  return (
+    // <div className="cursor-pointer max-w-full max-h-full w-32 h-32  p-5 bg-white rounded-md shadow-solid">
+    <div className="grid content-center cursor-pointer h-32 bg-white rounded-md shadow-solid">
+      <span className="font-bold text-center">{content}</span>
+    </div>
+  );
+}
+
+function RawCardList({ cards }) {
+  return (
+    <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 grid grid-cols-4 gap-7 p-5 mt-20 rounded-md cursor-pointer shadow-outline-gray">
+      {cards.map((item) => (
+        <RawCard content={item.name} />
+      ))}
+    </div>
+  );
+}
+
+export { Card, RawCard, RawCardList };
