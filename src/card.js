@@ -2,6 +2,21 @@ import React, { useState, Fragment } from "react";
 import { animated, useSpring } from "react-spring";
 import "./styles.css";
 
+function AddCard(props) {
+  return (
+    <div
+      className="grid content-center cursor-pointer h-32 bg-white rounded-md shadow-solid"
+      onClick={() => {
+        if (props.content.children !== undefined) {
+          props.callback(props.content.children);
+        }
+      }}
+    >
+      <span className="font-bold text-center">{props.content.name}</span>
+    </div>
+  );
+}
+
 function FlipCard(props) {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({

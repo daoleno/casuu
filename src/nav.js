@@ -19,12 +19,15 @@ function Nav() {
                 alt="Workflow logo"
               /> */}
               <a href="/">
-                <h1 className="block w-auto">Memory Card</h1>
+                <h1 className="block w-auto text-xl">Casuu</h1>
               </a>
             </div>
           </div>
-          <div className="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
-            <div className="max-w-lg w-full lg:max-w-xs">
+          <div
+            class
+            Name="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end"
+          >
+            {/* <div className="max-w-lg w-full lg:max-w-xs">
               <label for="search" className="sr-only">
                 Search
               </label>
@@ -49,16 +52,14 @@ function Nav() {
                   type="search"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
-          <div className="flex items-center lg:hidden">
-            {/* <!-- Mobile menu button --> */}
+          {/* <div className="flex items-center lg:hidden">
             <button
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
               aria-label="Main menu"
               aria-expanded="false"
             >
-              {/* <!-- Icon when menu is closed. --> */}
               <svg
                 className="block h-6 w-6"
                 fill="none"
@@ -72,7 +73,6 @@ function Nav() {
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
-              {/* <!-- Icon when menu is open. --> */}
               <svg
                 className="hidden h-6 w-6"
                 fill="none"
@@ -87,8 +87,27 @@ function Nav() {
                 />
               </svg>
             </button>
-          </div>
-          <div className="hidden lg:ml-4 lg:flex lg:items-center">
+          </div> */}
+          {/* <div className="hidden lg:ml-4 lg:flex lg:items-center">
+            <a href="/edit">
+              <button
+                className="flex-shrink-0 p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:text-gray-500 focus:bg-gray-100 transition duration-150 ease-in-out"
+                aria-label="Notifications"
+              >
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </a>
+
             <button
               className="flex-shrink-0 p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-gray-500 focus:outline-none focus:text-gray-500 focus:bg-gray-100 transition duration-150 ease-in-out"
               aria-label="Notifications"
@@ -108,7 +127,6 @@ function Nav() {
               </svg>
             </button>
 
-            {/* <!-- Profile dropdown --> */}
             <div className="ml-4 relative flex-shrink-0">
               <div>
                 <button
@@ -124,17 +142,10 @@ function Nav() {
                   />
                 </button>
               </div>
-              {/* <!--
-            Profile dropdown panel, show/hide based on dropdown state.
-
-            Entering: "transition ease-out duration-100"
-              From: "transform opacity-0 scale-95"
-              To: "transform opacity-100 scale-100"
-            Leaving: "transition ease-in duration-75"
-              From: "transform opacity-100 scale-100"
-              To: "transform opacity-0 scale-95"
-          --> */}
             </div>
+          </div> */}
+          <div className="flex items-center text-lg">
+            <a>Signin</a>
           </div>
         </div>
       </div>
