@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import { Link } from "@reach/router";
 
 function Nav() {
   return (
@@ -145,7 +146,7 @@ function Nav() {
             </div>
           </div> */}
           <div className="flex items-center text-lg">
-            <a>Signin</a>
+            <Link to="/login">Login</Link>
           </div>
         </div>
       </div>
