@@ -58,7 +58,7 @@ function RawCard(props) {
   return (
     // <div className="cursor-pointer max-w-full max-h-full w-32 h-32  p-5 bg-white rounded-md shadow-solid">
     <div
-      className="grid content-center cursor-pointer h-32 bg-white rounded-md shadow-solid"
+      className="grid content-center cursor-pointer h-32 bg-white rounded-md border border-gray-700"
       onClick={() => {
         // setOpen(!open);
         if (props.content.children !== undefined) {
@@ -73,7 +73,7 @@ function RawCard(props) {
           ))}
         </div>
       ) : ( */}
-      <span className="font-bold text-center">{props.content.name}</span>
+      <span className="font-light text-center">{props.content.name}</span>
       {/* )} */}
     </div>
   );
@@ -82,7 +82,7 @@ function RawCard(props) {
 function RawCardList({ cards }) {
   const [data, setData] = useState(cards);
   return (
-    <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 grid grid-cols-4 gap-7 p-5 mt-20 rounded-md cursor-pointer shadow-outline-gray">
+    <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 grid grid-cols-4 gap-7 p-5 mt-20">
       {data.map((item) =>
         item.type === "child" ? (
           <FlipCard />

@@ -3,6 +3,10 @@ import "./styles.css";
 import Home from "./home";
 import { Router } from "@reach/router";
 import Login from "./login";
+import data from "./data";
+import { RawCardList } from "./card";
+import Content from "./content";
+import CreateGroup from "./group";
 
 function App() {
   return (
@@ -11,8 +15,10 @@ function App() {
     //   <CardBox data={data} />
     // </div> */}
     <Router>
-      <Home path="/" abslote />
+      <Home path="/" />
       <Login path="/login" />
+      <Content path="/content" />
+      <CreateGroup path="/create-group" />
     </Router>
   );
 }
