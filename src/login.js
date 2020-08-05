@@ -53,7 +53,7 @@ function Login() {
                   type="submit"
                   class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-thin rounded-md text-black bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-500 focus:shadow-outline-gray active:bg-gray-500 transition duration-150 ease-in-out"
                 >
-                  <Link to="/content">Sign in</Link>
+                  <Link to="/group">Log In</Link>
                 </button>
               </span>
             </div>

@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import Nav from "./nav";
 import { Link } from "@reach/router";
+import { RawCardList } from "./card";
+import data from "./data";
 
 function CreateGroup() {
   return (
@@ -30,4 +32,13 @@ function CreateGroup() {
   );
 }
 
-export default CreateGroup;
+function Group() {
+  return (
+    <Fragment>
+      <Nav isLogin isGroup />
+      <RawCardList cards={data} />
+    </Fragment>
+  );
+}
+
+export { CreateGroup, Group };

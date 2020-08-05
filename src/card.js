@@ -1,6 +1,8 @@
 import React, { useState, Fragment } from "react";
 import { animated, useSpring } from "react-spring";
 import "./styles.css";
+import Nav from "./nav";
+import { Link } from "@reach/router";
 
 function AddCard(props) {
   return (
@@ -94,4 +96,40 @@ function RawCardList({ cards }) {
   );
 }
 
-export { FlipCard, RawCard, RawCardList };
+function CreateCard() {
+  return (
+    <Fragment>
+      <Nav isLogin isGroup="false" />
+      <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+          <h2 className="mt-6 text-center text-3xl leading-9 font-light text-gray-900">
+            Create Card
+          </h2>
+        </div>
+        <div className="mt-8 flex flex-col justify-between">
+          <textarea
+            className="mx-auto h-32 w-96 rounded-lg border border-gray-700 px-4 py-4"
+            placeholder="Front"
+          />
+          <textarea
+            className="mt-10 mx-auto h-32 w-96 rounded-lg border border-gray-700 px-4 py-4"
+            placeholder="Back"
+          />
+        </div>
+
+        <div class="mt-6 mx-auto">
+          <span class="block w-full rounded-md border border-gray-700">
+            <button
+              type="submit"
+              class="w-full flex justify-center py-2 px-4 border border-transparent text-xl font-lighter rounded-md text-black"
+            >
+              <Link to="/content">Submit</Link>
+            </button>
+          </span>
+        </div>
+      </div>
+    </Fragment>
+  );
+}
+
+export { FlipCard, RawCard, RawCardList, CreateCard };

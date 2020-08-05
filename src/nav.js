@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import { Link } from "@reach/router";
 
-function Nav({ isLogin }) {
+function Nav({ isLogin, isGroup }) {
   return (
     <nav className="bg-white shadow">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
@@ -18,9 +18,15 @@ function Nav({ isLogin }) {
             {isLogin ? (
               <div className="flex items-center align-middle">
                 <div className="rounded-md border border-gray-700 px-2 mr-4">
-                  <Link to="/create-group" className="font-light">
-                    Create a group
-                  </Link>
+                  {isGroup ? (
+                    <Link to="/create-group" className="font-light">
+                      Create a group
+                    </Link>
+                  ) : (
+                    <Link to="/create-card" className="font-light">
+                      Create a Card
+                    </Link>
+                  )}
                 </div>
                 <div className="ml-4 relative flex-shrink-0">
                   <div>
