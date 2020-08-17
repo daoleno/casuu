@@ -4,7 +4,7 @@ import Home from "./home";
 import { Router } from "@reach/router";
 import Login from "./login";
 import { CreateGroup, Group } from "./group";
-import { CreateCard } from "./card";
+import { CreateCard, Card } from "./card";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
       <Login path="/login" />
       <Group path="/group" />
       <CreateGroup path="/create-group" />
+      <Card path="/group/:groupName" />
       <CreateCard path="/create-card" />
     </Router>
   );

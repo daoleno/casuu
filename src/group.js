@@ -2,7 +2,10 @@ import React, { Fragment } from "react";
 import Nav from "./nav";
 import { Link } from "@reach/router";
 import { RawCardList } from "./card";
-import data from "./data";
+// import data from "./data";
+import useSWR from "swr";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function CreateGroup() {
   return (
@@ -23,7 +26,7 @@ function CreateGroup() {
               type="submit"
               class="w-full flex justify-center py-2 px-4 border border-transparent text-xl font-lighter rounded-md text-black"
             >
-              <Link to="/content">Submit</Link>
+              <Link to="/group">Submit</Link>
             </button>
           </span>
         </div>
@@ -33,6 +36,10 @@ function CreateGroup() {
 }
 
 function Group() {
+  const { data, error } = useSWR("http://localhost:8080/group", fetcher);
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
+
   return (
     <Fragment>
       <Nav isLogin isGroup />

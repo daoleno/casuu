@@ -59,15 +59,17 @@ function RawCard(props) {
 
   return (
     // <div className="cursor-pointer max-w-full max-h-full w-32 h-32  p-5 bg-white rounded-md shadow-solid">
-    <div
+    <Link
+      to={props.content.name}
       className="grid content-center cursor-pointer h-32 bg-white rounded-md border border-gray-700"
-      onClick={() => {
-        // setOpen(!open);
-        if (props.content.children !== undefined) {
-          props.callback(props.content.children);
-        }
-      }}
+      // onClick={() => {
+      //   // setOpen(!open);
+      //   if (props.content.children !== undefined) {
+      //     props.callback(props.content.children);
+      //   }
+      // }}
     >
+      {/* <Link to="/" /> */}
       {/* {open ? (
         <div className="grid grid-cols-4 gap-7 p-5 mt-20 rounded-md cursor-pointer shadow-outline-red">
           {data.map((item) => (
@@ -77,7 +79,7 @@ function RawCard(props) {
       ) : ( */}
       <span className="font-light text-center">{props.content.name}</span>
       {/* )} */}
-    </div>
+    </Link>
   );
 }
 
@@ -85,12 +87,14 @@ function RawCardList({ cards }) {
   const [data, setData] = useState(cards);
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 grid grid-cols-4 gap-7 p-5 mt-20">
-      {data.map((item) =>
-        item.type === "child" ? (
-          <FlipCard />
-        ) : (
+      {data.map(
+        (item) => (
+          // item.type === "child" ? (
+          //   <FlipCard />
+          // ) : (
           <RawCard content={item} callback={setData} />
         )
+        // )
       )}
     </div>
   );
@@ -132,4 +136,13 @@ function CreateCard() {
   );
 }
 
-export { FlipCard, RawCard, RawCardList, CreateCard };
+function Card(props) {
+  return (
+    <Fragment>
+      <Nav isLogin />
+      <RawCardList cards={props.groupName} />
+    </Fragment>
+  );
+}
+
+export { FlipCard, RawCard, RawCardList, CreateCard, Card };
